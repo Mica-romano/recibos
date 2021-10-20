@@ -1,8 +1,8 @@
 <?php
-
+//conexion a la base de datos
 $link = 'mysql:host=localhost;dbname=recibos';
 $usuario = 'root';
-$pass =  '';
+$pass ='';
 
 try {
     $pdo = new PDO($link,$usuario,$pass);
