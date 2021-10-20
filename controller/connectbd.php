@@ -1,4 +1,14 @@
 <?php
-//conectar la base de datos
-$conexion=mysqli_connect("localhost", "root","recibos");
-?>
+
+$link = 'mysql:host=localhost;dbname=recibos';
+$usuario = 'root';
+$pass =  '';
+
+try {
+    $pdo = new PDO($link,$usuario,$pass);
+    echo 'conectado';
+
+} catch (PDOException $e) {
+    echo 'Falló la conexión: ' . $e->getMessage() ." <br/>";
+    die();
+}
