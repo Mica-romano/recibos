@@ -43,7 +43,7 @@
         </div>
       </nav>
 
-
+<!--Crear nuevo usuario -->
     <header>
         <div><h3>Elije el tipo de usuario</h3></div>
         <div class="dropdown">
@@ -56,7 +56,33 @@
               <li><a class="dropdown-item" href="#">Empleado</a></li>
             </ul>
           </div>
-     
+            <div class="log-content">
+              <div><h4>Complete el siguiente formulario</h4></div>
+                <form action="newuser.php" method="post">
+                    <i class="fa fa-user icon"></i>
+                    <input type="text" placeholder="Nombre" name="nombre" class="log-input" required>
+                    <br>
+                    <i class="fa fa-user icon"></i>
+                    <input type="text" placeholder="Apellido" name="apellido" class="log-input" required>
+                    <br>
+                    <i class="fa fa-lock icon"></i>
+                    <input type="dni" placeholder="Dni" name="dni" class="log-input" required>
+                    <br>
+                    <i class="fa fa-lock icon"></i>
+                    <input type="password" placeholder="Legajo" name="legajo" class="log-input" required>
+                    <br>
+                    <i class="fa fa-lock icon"></i>
+                    <input type="password" placeholder="Email" name="email" class="log-input" required>
+                    <br>
+                    <i class="fa fa-lock icon"></i>
+                    <input type="password" placeholder="Contraseña" name="contrasenna" class="log-input" required>
+                    <br>
+
+                    <input type="submit" value="Crear nuevo usuario" name="signup-btn" class="btn-log">
+                </form>
+            </div>
+        </div>
+    </div>
     </header>
 
     

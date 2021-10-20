@@ -52,10 +52,10 @@
           <div class="log-content">
               <form action="login.php" method="post"><!--crear archicovo en php login-->
                   <i class="fa fa-user icon"></i>
-                  <input type="text" placeholder="Usuario" name="usuario" class="log-input" required>
+                  <input type="text" placeholder="Ingrese su usuario" name="usuario" class="log-input" required>
                   <br>
                   <i class="fa fa-lock icon"></i>
-                  <input type="password" placeholder="Contraseña" name="contrasenna" class="log-input" required>
+                  <input type="password" placeholder="Ingrese su contraseña" name="contrasenna" class="log-input" required>
                   <br>
                   <input type="submit" value="Iniciar sesion" name="signup-btn" class="btn-log">
               </form>
