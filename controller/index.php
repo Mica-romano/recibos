@@ -1,58 +1,21 @@
-<?php
-$usuario=$_POST['usuario'];
-$contrasenna=$_POST['contraseña'];
-session_start();
-$_SESSION['usuario']=$usuario;
-
-include('connectbd.php');
-//$conexion=mysqli_connect("localhost", "root","recibos");
-//incluye el archivo de la conexion de la bd
-$consulta="SELECT*FROM usuarios where usuario='$usuario' and contrasenna='$contraseña'";
-$resultado=mysqli_query($conexion,$consulta);
-
-$filas=mysqli_num_rows($resultado)
-
-if($filas){
-    header("location:");
-
-}else{
-    ?>
-    <?php
-    include("index.html");
-    ?>
-    <h1>Datos invalidos</h1>
-    <?php
-}
-
-msqli_free_result($resultado);
-msqli_close(conexion);
-
-?>
-
-
-
-
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE html> 
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Web de empleados</title>
     <link rel="stylesheet" href="../css/index.css"><!-- Archivos  CSS -->
-    
-<!-- Bootstrap -->
+    <!-- Bootstrap -->
     <link rel=" stylesheet " href="../css/bootstrap.min.css ">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js" integrity="sha384-q2kxQ16AaE6UbzuKqyBE9/u/KzioAlnx2maXQHiDX9d4/zp8Ok3f+M7DPm+Ib6IU" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.min.js" integrity="sha384-pQQkAEnwaBkjpqZ8RU1fF1AKtTcHJwFl3pblpTlHXybJjHpMYo79HY3hIi4NKxyj" crossorigin="anonymous"></script>
 </head>
-
 <body class="fondo">
 <!-- Barra de navegacion -->
-
       <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <div class="container-fluid">
+        <div class="container-fluid"> 
           <div class="collapse navbar-collapse" id="navbarNavDropdown">
             <ul class="navbar-nav">
               <li class="nav-item">
@@ -87,12 +50,12 @@ msqli_close(conexion);
       <div class="log-popup">
           <h2>Iniciar Sesion</h2>
           <div class="log-content">
-              <form action=".../login.php" method="post"><!--crear archicovo en php login-->
+              <form action="login.php" method="post"><!--crear archicovo en php login-->
                   <i class="fa fa-user icon"></i>
-                  <input type="text" placeholder="Usuario" name="username" class="log-input" required>
+                  <input type="text" placeholder="Usuario" name="usuario" class="log-input" required>
                   <br>
                   <i class="fa fa-lock icon"></i>
-                  <input type="password" placeholder="Contraseña" name="password" class="log-input" required>
+                  <input type="password" placeholder="Contraseña" name="contrasenna" class="log-input" required>
                   <br>
                   <input type="submit" value="Iniciar sesion" name="signup-btn" class="btn-log">
               </form>
