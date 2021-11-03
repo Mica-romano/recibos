@@ -33,7 +33,7 @@ CREATE TABLE `certificados` (
   `observaciones` text COLLATE utf8_spanish_ci NOT NULL,
   `certificado` text COLLATE utf8_spanish_ci NOT NULL,
   `fecha` date NOT NULL,
-  `id-cliente` int(15) NOT NULL
+  `id-usuario` int(15) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
 
 -- --------------------------------------------------------
@@ -46,7 +46,7 @@ CREATE TABLE `recibos` (
   `id-recibos` int(15) NOT NULL,
   `recibo` int(20) NOT NULL,
   `fecha` date NOT NULL,
-  `id-cliente` int(15) NOT NULL
+  `id-usuario` int(15) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
 
 -- --------------------------------------------------------
@@ -57,11 +57,11 @@ CREATE TABLE `recibos` (
 
 CREATE TABLE `usuarios` (
   `id` int(15) NOT NULL,
+  `nombre` varchar(25) COLLATE utf8_spanish_ci NOT NULL,
+  `apellido` varchar(25) COLLATE utf8_spanish_ci NOT NULL,
   `tipoUsuario` int(15) NOT NULL,
   `legajo` int(15) NOT NULL,
   `contrasenna` varchar(20) COLLATE utf8_spanish_ci NOT NULL,
-  `nombre` varchar(25) COLLATE utf8_spanish_ci NOT NULL,
-  `apellido` varchar(25) COLLATE utf8_spanish_ci NOT NULL,
   `dni` int(13) NOT NULL,
   `email` varchar(70) COLLATE utf8_spanish_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
@@ -75,14 +75,14 @@ CREATE TABLE `usuarios` (
 --
 ALTER TABLE `certificados`
   ADD PRIMARY KEY (`id-certificados`),
-  ADD KEY `id-cliente` (`id-cliente`);
+  ADD KEY `id-usuario` (`id-usuario`);
 
 --
 -- Indices de la tabla `recibos`
 --
 ALTER TABLE `recibos`
   ADD PRIMARY KEY (`id-recibos`),
-  ADD KEY `id-cliente` (`id-cliente`);
+  ADD KEY `id-usuario` (`id-usuario`);
 
 --
 -- Indices de la tabla `usuarios`
@@ -98,13 +98,13 @@ ALTER TABLE `usuarios`
 -- Filtros para la tabla `certificados`
 --
 ALTER TABLE `certificados`
-  ADD CONSTRAINT `certificados_ibfk_1` FOREIGN KEY (`id-cliente`) REFERENCES `usuarios` (`id`);
+  ADD CONSTRAINT `certificados_ibfk_1` FOREIGN KEY (`id-usuario`) REFERENCES `usuarios` (`id`);
 
 --
 -- Filtros para la tabla `recibos`
 --
 ALTER TABLE `recibos`
-  ADD CONSTRAINT `recibos_ibfk_1` FOREIGN KEY (`id-cliente`) REFERENCES `usuarios` (`id`);
+  ADD CONSTRAINT `recibos_ibfk_1` FOREIGN KEY (`id-usuario`) REFERENCES `usuarios` (`id`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
