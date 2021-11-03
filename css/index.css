@@ -1,8 +1,9 @@
 .fondo{ 
-   background-color: #33d4b1;
-   background-image: url("images.image.jpg");
+   background-color:red;
+   background-image: url("images.image.jpg.jpg");
 
 }
+
 
 .footer{  background-color: #e4d282;
     position: absolute;

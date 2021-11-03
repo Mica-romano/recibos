@@ -19,14 +19,8 @@
           <div class="collapse navbar-collapse" id="navbarNavDropdown">
             <ul class="navbar-nav">
               <li class="nav-item">
-                <a class="nav-link active text-white " href="index.html"> ✷ Inicio</a>
+                <a class="nav-link active text-white " href="index.php"> ✷ Inicio</a>
             </li>
-            <li class="nav-item">
-              <a class="nav-link text-white" href="recibos.html">✷ Recibos de sueldo </a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link text-white" href="certificados.html">✷ Certificados </a>
-            </li> 
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                 Usuario
